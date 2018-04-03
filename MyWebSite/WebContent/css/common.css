@@ -1,0 +1,27 @@
+.button_right{
+   text-align:right;
+   margin-top: 20px;
+}
+
+.button_center{
+   text-align:center;
+
+}
+
+input {
+    width: 300px;
+
+
+
+}
+textarea {
+    width: 700px;
+    height: 300px;
+
+}
+
+texttareasubject {
+    width: 700px;
+    height: 30px;
+
+}

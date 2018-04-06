@@ -69,11 +69,13 @@ public class Mentor extends HttpServlet {
 		 // リクエストパラメータの入力項目を取得
 		    int userId = Integer.parseInt(request.getParameter("userId"));
 			int mentorId = Integer.parseInt(request.getParameter("mentorId"));
+			String userName = request.getParameter("userName");
+			String mentorName = request.getParameter("mentorName");
 		    String subject = request.getParameter("subject");
 			String question = request.getParameter("question");
 			String questionDate = request.getParameter("questionDate");
 
-			 boolean check = QuestionDao.messageInsert(userId,mentorId,subject,question,questionDate);
+			 boolean check = QuestionDao.messageInsert(userId,mentorId,userName,mentorName,subject,question,questionDate);
 
 
 		        if(check) {

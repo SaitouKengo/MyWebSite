@@ -44,6 +44,10 @@
 
 		<input type="hidden" name="mentorId" value="${detailUser.id}">
 
+		<input type="hidden" name="userName" value="${userInfo.name}">
+
+		<input type="hidden" name="mentorName" value="${detailUser.name}">
+
 			  <div class="form-group">
 			    <label for="exampleFormControlInput1">件名</label>
 			    <input type="text" name="subject" class="form-control" id="exampleFormControlInput1" placeholder="">

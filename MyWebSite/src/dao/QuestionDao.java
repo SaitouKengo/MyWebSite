@@ -139,21 +139,23 @@ public class QuestionDao {
     }
 
   //相談登録用メソッド
-  		public static boolean messageInsert(int userId, int mentorId, String subject,String question, String questionDate) {
+  		public static boolean messageInsert(int userId, int mentorId, String userName, String mentorName, String subject,String question, String questionDate) {
   			Connection conn = null;
   		try {
   			conn = DBManager.getConnection();
 
 
 
-  			String sql = "INSERT INTO questions(user_id, mentor_id, subject, question, question_date, reply, reply_date) VALUES (?, ?, ?, ?, NOW(),?,NOW())";
+  			String sql = "INSERT INTO questions(user_id, mentor_id, user_name, mentor_name, subject, question, question_date) VALUES (?, ?, ?, ?, ?, ?, NOW())";
 
   			PreparedStatement pStmt = conn.prepareStatement(sql);
   			pStmt.setInt(1, userId);
   	        pStmt.setInt(2, mentorId);
-  			pStmt.setString(3, subject);
-  	        pStmt.setString(4, question);
-  	        pStmt.setString(5, questionDate);
+  	        pStmt.setString(3, userName);
+	        pStmt.setString(4, mentorName);
+  			pStmt.setString(5, subject);
+  	        pStmt.setString(6, question);
+
 
   	        pStmt.executeUpdate();
 

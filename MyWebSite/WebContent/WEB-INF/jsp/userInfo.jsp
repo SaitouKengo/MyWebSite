@@ -20,9 +20,11 @@
 	<div class="container">
 
 
-		<h2 class="text-center">お悩み相談 受付完了</h2>
-
-		<br> お悩み相談を受け付けました。 メンターより返信をいたしますのでしばらくお待ちください。 <br>
+		<br><br>
+		<div class="alert alert-success" role="alert">
+			<h5 class="alert-heading text-center">お悩み相談受付完了</h5>
+		</div>
+		<br><br>
 
 
 		<ul class="nav justify-content-end">

@@ -12,15 +12,14 @@
 </head>
 
 <body background="picture/p0526_m.jpg">
-	<ul class="navbar justify-content bg-dark">
 
-	</ul>
 
 	<div class="container">
 
 		<br>
 
-		<h2 class="text-center">ユーザーログイン画面</h2>
+		<h2 class="text-center text">ユーザーログイン画面</h2>
+		<br>
 		<form  action="Login" method="post">
 
 		<div class="button_right">

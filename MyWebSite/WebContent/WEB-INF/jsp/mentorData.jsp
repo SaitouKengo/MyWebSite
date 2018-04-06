@@ -25,9 +25,16 @@
 
 		<h2 class="text-center">メンター情報確認画面</h2>
 
-		<br><img src="${detailMentor.picture}"width="180" height="200">
+		<br>
+		<div align="center">
+		<img src="${detailMentor.picture}"width="180" height="200">
+		</div>
 
-		 <br>${detailMentor.profile}<br>
+		 <br>
+		 <div align="center">
+		 ${detailMentor.profile}
+		 </div>
+		 <br>
 
 
 		 <div class="table-responsive">

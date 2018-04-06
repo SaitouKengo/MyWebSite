@@ -20,9 +20,13 @@
 	<div class="container">
 
 
-		<h2 class="text-center">お悩み相談 返信完了</h2>
+		<h2 class="text-center"></h2>
 
-		<br> 返信が完了しました。 <br>
+		<br><br>
+		<div class="alert alert-primary" role="alert">
+			<h5 class="alert-heading text-center">返信が完了しました。</h5>
+		</div>
+		<br><br>
 
 
 		<ul class="nav justify-content-end">

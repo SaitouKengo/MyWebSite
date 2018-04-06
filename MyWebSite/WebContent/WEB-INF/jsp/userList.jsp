@@ -28,7 +28,7 @@
 	<div class="container">
 
 
-		<h2 class="text-center">お悩み相談サイト</h2>
+		<h2 class="text-center text">お悩み相談サイト</h2>
 
 
 		<br><br>

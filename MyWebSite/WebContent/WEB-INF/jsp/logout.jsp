@@ -16,10 +16,14 @@
 	<div class="container">
 		<br>
 
-		<h2 class="text-center">ログアウトしました</h2>
+		<br><br>
+		<div class="alert alert-danger" role="alert">
+			<h5 class="alert-heading text-center">ログアウトしました。</h5>
+		</div>
+		<br><br>
 
 
-		<br>
+
 		<div class="button_center">
 			<a class="btn btn-primary" href="Login">ユーザーログインページへ</a>
 		</div>

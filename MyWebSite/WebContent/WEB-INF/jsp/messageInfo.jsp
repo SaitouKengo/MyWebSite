@@ -26,19 +26,33 @@
 
 		<h2 class="text-center">相談詳細</h2>
 
-		<br> 投稿日時: ${detailQuestion.questionDate} <br><br>
-		相談者: ${detailQuestion.mentorName}<br><br>
-		件名: ${detailQuestion.userName}<br><br>
+		<br><br>
 
-		相談内容: ${detailQuestion.question}<br>
+		<div class="alert alert-info text-center " role="alert">
+			<h5 class="alert-heading">相談者: ${detailQuestion.mentorName}</h5>
+			<hr>
+			<p>相談日時: ${detailQuestion.questionDate}</p>
 
+			<p>件名: ${detailQuestion.userName}</p>
+			<hr>
+			<p class="mb-0">
+				相談内容:<br><br> ${detailQuestion.question}
+			</p>
+		</div>
+		<br><br>
 
-		<br><br><br>
-		返信日時: ${detailQuestion.replyDate} <br><br>
-		返信者: ${userInfo.name} <br><br>
+		<div class="alert alert-success text-center" role="alert">
+			<h5 class="alert-heading">返信者: ${detailQuestion.subject}</h5>
+			<hr>
+			<p>返信日時: ${detailQuestion.replyDate} </p>
 
-		返信内容: ${detailQuestion.reply}
-		<br><br><br>
+			<p>件名: ${detailQuestion.userName}</p>
+			<hr>
+			<p class="mb-0">
+				返信内容:<br><br> ${detailQuestion.reply}
+			</p>
+		</div>
+		<br><br>
 
 
 		<form method="post" action="MessageInfo">
@@ -47,8 +61,8 @@
 		<input type="hidden" name="id" value="${detailQuestion.id}">
 
 
-		<div class="form-group">
-			    <label for="exampleFormControlTextarea1">相談内容</label>
+		<div class="form-group text-center">
+			    <label for="exampleFormControlTextarea1">返信内容</label>
 			    <textarea name="reply" class="form-control" id="exampleFormControlTextarea1" ></textarea>
 			  </div>
 

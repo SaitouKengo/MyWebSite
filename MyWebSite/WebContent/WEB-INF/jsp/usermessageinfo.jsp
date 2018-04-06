@@ -25,21 +25,32 @@
 		<br>
 
 		<h2 class="text-center">相談詳細</h2>
+		<br><br>
 
-		<br> 投稿日時: ${detailQuestion.questionDate} <br><br>
-		相談者: ${userInfo.name}<br><br>
-		件名: ${detailQuestion.userName}<br>
-		相談内容: ${detailQuestion.question}<br>
+		<div class="alert alert-info" role="alert">
+			<h5 class="alert-heading">相談者: ${userInfo.name}</h5>
+			<hr>
+			<p>相談日時: ${detailQuestion.questionDate}</p>
 
+			<p>件名: ${detailQuestion.userName}</p>
+			<hr>
+			<p class="mb-0">
+				相談内容:<br><br> ${detailQuestion.question}
+			</p>
+		</div>
+		<br><br>
 
-		<br><br><br>
-		返信日時: ${detailQuestion.replyDate} <br><br>
-		返信者: ${detailQuestion.subject} <br><br>
+		<div class="alert alert-success" role="alert">
+			<h5 class="alert-heading">返信者: ${detailQuestion.subject}</h5>
+			<hr>
+			<p>返信日時: ${detailQuestion.replyDate} </p>
 
-		返信内容: ${detailQuestion.reply}
-		<br><br><br>
-
-		<br>
+			<p>件名: ${detailQuestion.userName}</p>
+			<hr>
+			<p class="mb-0">
+				返信内容:<br><br> ${detailQuestion.reply}
+			</p>
+		</div>
 
 	</div>
 </body>

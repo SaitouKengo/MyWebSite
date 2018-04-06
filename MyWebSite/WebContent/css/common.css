@@ -12,11 +12,12 @@ input {
     width: 300px;
 
 
-
 }
 textarea {
     width: 700px;
     height: 300px;
+
+
 
 }
 
@@ -25,3 +26,34 @@ texttareasubject {
     height: 30px;
 
 }
+
+h2{
+	position: relative;
+	padding: 10px 20px;
+	font-size:20px;
+	text-align:center;
+	border-top: solid 1px #325A8C;
+	border-bottom: solid 1px #325A8C;
+}
+h2::before,
+h2::after{
+	content: '';
+	position: absolute;
+	top: -10px;
+	width: 1px;
+	height: calc(100% + 20px);
+	background-color: #325A8C;
+}
+h2::before{left: 10px;}
+h2::after{right: 10px;}
+
+.box5 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.box5 p {
+    margin: 0;
+    padding: 0;
+}
+

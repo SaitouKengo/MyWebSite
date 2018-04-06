@@ -1,12 +1,14 @@
 package beans;
 
 /**
- * questionテーブルのデータを格納するためのBeans
+ * questionsテーブルのデータを格納するためのBeans
  */
 public class Question {
 	private int id;
 	private int userId;
 	private int mentorId;
+	private String userName;
+	private String mentorName;
 	private String subject;
 	private String question;
 	private String questionDate;
@@ -17,11 +19,13 @@ public class Question {
 
 
 	// 全てのデータをセットするコンストラクタ
-	public Question(int id, int user_id, int mentor_id, String subject, String question,
+	public Question(int id, int user_id, int mentor_id, String user_name, String mentor_name, String subject, String question,
 			 String question_date, String reply, String reply_date) {
 		this.id = id;
 		this.userId = user_id;
 		this.mentorId = mentor_id;
+		this.userName = user_name;
+		this.mentorName = mentor_name;
 		this.subject = subject;
 		this.question = question;
 		this.questionDate = question_date;
@@ -75,6 +79,34 @@ public class Question {
 
 
 
+	public String getUserName() {
+		return userName;
+	}
+
+
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+
+
+	public String getMentorName() {
+		return mentorName;
+	}
+
+
+
+
+	public void setMentorName(String mentorName) {
+		this.mentorName = mentorName;
+	}
+
+
+
+
 	public String getSubject() {
 		return subject;
 	}
@@ -110,8 +142,8 @@ public class Question {
 
 
 
-	public void setQuestionDate(String question_date) {
-		this.questionDate = question_date;
+	public void setQuestionDate(String questionDate) {
+		this.questionDate = questionDate;
 	}
 
 
@@ -143,3 +175,6 @@ public class Question {
 	}
 
 }
+
+
+

@@ -27,8 +27,9 @@
 		<h2 class="text-center">相談詳細</h2>
 
 		<br> 投稿日時: ${detailQuestion.questionDate} <br><br>
-		相談者: キノコ<br><br>
-		件名: ${detailQuestion.subject}<br>
+		相談者: ${detailQuestion.mentorName}<br><br>
+		件名: ${detailQuestion.userName}<br><br>
+
 		相談内容: ${detailQuestion.question}<br>
 
 
@@ -46,20 +47,15 @@
 		<input type="hidden" name="id" value="${detailQuestion.id}">
 
 
+		<div class="form-group">
+			    <label for="exampleFormControlTextarea1">相談内容</label>
+			    <textarea name="reply" class="form-control" id="exampleFormControlTextarea1" ></textarea>
+			  </div>
 
+			  <div class="button_center">
+						<button class="btn btn-primary" type="submit">返信</button><br> <br>
+					</div>
 
-		<dl>
-			<dt>返信内容</dt>
-			<dd>
-				<textarea name="reply" placeholder=></textarea>
-			</dd>
-		</dl>
-
-		<br>
-
-		<div class="button_center">
-			<button class="btn btn-primary" type="submit">送信</button><br> <br>
-		</div>
 		</form>
 
 	</div>

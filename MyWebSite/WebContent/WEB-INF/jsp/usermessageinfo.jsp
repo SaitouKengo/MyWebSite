@@ -28,13 +28,13 @@
 
 		<br> 投稿日時: ${detailQuestion.questionDate} <br><br>
 		相談者: ${userInfo.name}<br><br>
-		件名: ${detailQuestion.subject}<br>
+		件名: ${detailQuestion.userName}<br>
 		相談内容: ${detailQuestion.question}<br>
 
 
 		<br><br><br>
 		返信日時: ${detailQuestion.replyDate} <br><br>
-		返信者: ${detailQuestion.mentorId} <br><br>
+		返信者: ${detailQuestion.subject} <br><br>
 
 		返信内容: ${detailQuestion.reply}
 		<br><br><br>

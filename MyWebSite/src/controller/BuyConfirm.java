@@ -17,7 +17,7 @@ import dao.DeliveryMethodDAO;
 
 /**
  * 購入商品確認画面
- * @author d-yamaguchi
+ *
  *
  */
 @WebServlet("/BuyConfirm")

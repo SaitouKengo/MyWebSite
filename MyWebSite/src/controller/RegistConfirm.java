@@ -15,7 +15,7 @@ import dao.UserDAO;
 /**
  * ユーザー登録入力内容確認画面
  *
- * @author d-yamaguchi
+ *
  *
  */
 @WebServlet("/RegistConfirm")

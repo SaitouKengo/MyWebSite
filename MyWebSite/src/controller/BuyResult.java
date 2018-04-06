@@ -19,7 +19,7 @@ import dao.BuyDetailDAO;
 /**
  * 購入完了画面
  *
- * @author d-yamaguchi
+ *
  *
  */
 @WebServlet("/BuyResult")

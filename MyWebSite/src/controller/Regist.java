@@ -13,7 +13,7 @@ import beans.UserDataBeans;
 
 /**
  * ユーザー登録画面
- * @author d-yamaguchi
+ *
  *
  */
 @WebServlet("/Regist")

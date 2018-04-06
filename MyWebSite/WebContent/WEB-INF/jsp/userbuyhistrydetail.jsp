@@ -43,7 +43,7 @@
 				<c:forEach var="question" items="${messageList}" >
 
 					<tr>
-						<td>${question.mentorId}</td>
+						<td>${question.mentorName}</td>
 						<td>${question.subject}</td>
 						<td>${question.questionDate}</td>
 						<td><a class="btn btn-primary" href="UserMessageInfo?id=${question.id}">詳細</a>

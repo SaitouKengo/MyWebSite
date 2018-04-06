@@ -54,14 +54,9 @@ public class MessageInfo extends HttpServlet {
 
 		 request.setCharacterEncoding("UTF-8");
 
-
-
-
 		 //リクエストパラメータの入力項目を取得
 		 String reply = request.getParameter("reply");
 		 String id = request.getParameter("id");
-
-
 
 			 boolean check = QuestionDao.replyInsert(reply,id);
 

@@ -24,7 +24,7 @@ public class QuestionDao {
 
             // SELECT文を準備
 
-            String sql = "SELECT * FROM  question WHERE user_id NOT IN ('') ";
+            String sql = "SELECT * FROM  questions WHERE user_id NOT IN ('') ";
 
              // SELECTを実行し、結果表を取得
             Statement stmt = conn.createStatement();
@@ -35,13 +35,15 @@ public class QuestionDao {
                 int id = rs.getInt("id");
                 String userId = rs.getString("user_id");
                 String mentorId = rs.getString("mentor_id");
+                String userName = rs.getString("user_name");
+                String mentorName = rs.getString("mentor_name");
                 String subject = rs.getString("subject");
                 String question = rs.getString("question");
                 String questionDate = rs.getString("question_date");
                 String reply = rs.getString("reply");
                 String replyData = rs.getString("reply_date");
 
-                Question questions = new Question(id, Integer.parseInt(userId), Integer.parseInt(mentorId), subject, question, questionDate, reply, replyData);
+                Question questions = new Question(id, Integer.parseInt(userId), Integer.parseInt(mentorId), userName, mentorName, subject, question, questionDate, reply, replyData);
 
                 messageList.add(questions);
             }
@@ -72,7 +74,7 @@ public class QuestionDao {
 
             conn = DBManager.getConnection();
 
-         String sql = "SELECT * FROM question WHERE user_id NOT IN ('admin') ";
+         String sql = "SELECT * FROM questions WHERE user_id NOT IN ('admin') ";
 
             if(!userId.equals("")) {
             	sql += " and login_id = '" + userId + "'";
@@ -99,14 +101,16 @@ public class QuestionDao {
            while (rs.next()) {
                int id = rs.getInt("id");
                String userIdData = rs.getString("user_id");
-               String mentorIDData = rs.getString("mentor?id");
+               String mentorIDData = rs.getString("mentor_id");
+               String userNameData = rs.getString("user_name");
+               String mentorNameData = rs.getString("mentor_name");
                String subjectData = rs.getString("subject");
                String questionData = rs.getString("question");
                String questionDateData = rs.getString("question_date");
                String replyData = rs.getString("reply");
                String replyDateData = rs.getString("reply_date");
 
-               Question question = new Question(id, Integer.parseInt(userIdData), Integer.parseInt(mentorIDData), subjectData, questionData,
+               Question question = new Question(id, Integer.parseInt(userIdData), Integer.parseInt(mentorIDData), userNameData, mentorNameData,  subjectData, questionData,
             		   questionDateData, replyData,replyDateData);
 
                messageList.add(question);
@@ -142,7 +146,7 @@ public class QuestionDao {
 
 
 
-  			String sql = "INSERT INTO question(user_id, mentor_id, subject, question, question_date, reply, reply_date) VALUES (?, ?, ?, ?, NOW(),?,NOW())";
+  			String sql = "INSERT INTO questions(user_id, mentor_id, subject, question, question_date, reply, reply_date) VALUES (?, ?, ?, ?, NOW(),?,NOW())";
 
   			PreparedStatement pStmt = conn.prepareStatement(sql);
   			pStmt.setInt(1, userId);
@@ -180,7 +184,7 @@ public class QuestionDao {
 
 
 
-  			String sql = "UPDATE question SET reply = ? WHERE id = ?";
+  			String sql = "UPDATE questions SET reply = ? WHERE id = ?";
 
   			PreparedStatement pStmt = conn.prepareStatement(sql);
   			pStmt.setString(1, reply);
@@ -216,7 +220,7 @@ public class QuestionDao {
   	            conn = DBManager.getConnection();
 
   	            // SELECT文を準備
-  	            String sql = "SELECT * FROM question WHERE id = ?";
+  	            String sql = "SELECT * FROM questions WHERE id = ?";
 
   	             // SELECTを実行し、結果表を取得
   	            PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -237,13 +241,15 @@ public class QuestionDao {
   	          int id = rs.getInt("id");
               String userIdData = rs.getString("user_id");
               String mentorIDData = rs.getString("mentor_id");
+              String userNameData = rs.getString("user_name");
+              String mentorNameData = rs.getString("mentor_name");
               String subjectData = rs.getString("subject");
               String questionData = rs.getString("question");
               String questionDateData = rs.getString("question_date");
               String replyData = rs.getString("reply");
               String replyDateData = rs.getString("reply_date");
 
-              Question question = new Question(id, Integer.parseInt(userIdData), Integer.parseInt(mentorIDData), subjectData, questionData,
+              Question question = new Question(id, Integer.parseInt(userIdData), Integer.parseInt(mentorIDData), subjectData, userNameData, mentorNameData, questionData,
            		   questionDateData, replyData, replyDateData);
 
   	            return question;

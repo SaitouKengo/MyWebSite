@@ -26,9 +26,16 @@
 
 		<h2 class="text-center">メンター詳細画面</h2>
 
-		<br><img src="${detailUser.picture}"width="180" height="200">
+		<br>
+		<div align="center">
+		<img src="${detailUser.picture}"width="180" height="200">
+		</div>
 
-		 <br>${detailUser.profile}<br>
+		 <br>
+		<div align="center">
+        ${detailUser.profile}
+		</div>
+
 		 <br><br>
 
 		<form method="post" action="Mentor">
@@ -37,22 +44,23 @@
 
 		<input type="hidden" name="mentorId" value="${detailUser.id}">
 
-		<p>件名：<input type="text" name="subject"></p>
+			  <div class="form-group">
+			    <label for="exampleFormControlInput1">件名</label>
+			    <input type="text" name="subject" class="form-control" id="exampleFormControlInput1" placeholder="">
+			  </div>
 
-		<dl>
-			<dt>相談内容</dt>
-			<dd>
-				<textarea name="question" placeholder=></textarea>
-			</dd>
-		</dl>
+			  <div class="form-group">
+			    <label for="exampleFormControlTextarea1">相談内容</label>
+			    <textarea name="question" class="form-control" id="exampleFormControlTextarea1" ></textarea>
+			  </div>
+			  <br>
 
-		<br>
+					<div class="button_center">
+						<button class="btn btn-primary" type="submit">投稿</button><br> <br>
+					</div>
 
-		<div class="button_center">
-			<button class="btn btn-primary" type="submit">投稿</button><br> <br>
-		</div>
+	    </form>
 
-		</form>
 
 		<ul class="nav justify-content-end">
 			<li class="nav-item"><a class="nav-link active"

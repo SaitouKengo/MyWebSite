@@ -43,7 +43,7 @@
 
 					<tr>
 					<c:if test="${userInfo.id == question.mentorId}">
-						<td>${question.userId}</td>
+						<td>${question.userName}</td>
 						<td>${question.subject}</td>
 						<td>${question.questionDate}</td>
 						<td> <a class="btn btn-primary" href="MessageInfo?id=${question.id}">詳細</a></td>

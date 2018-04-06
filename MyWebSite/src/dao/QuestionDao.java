@@ -139,7 +139,7 @@ public class QuestionDao {
     }
 
   //相談登録用メソッド
-  		public static boolean messageInsert(int userId, int mentorId, String userName, String mentorName, String subject,String question, String questionDate) {
+  		public static boolean messageInsert(int userId, int mentorId, String userName, String mentorName, String subject,String question) {
   			Connection conn = null;
   		try {
   			conn = DBManager.getConnection();
@@ -186,7 +186,7 @@ public class QuestionDao {
 
 
 
-  			String sql = "UPDATE questions SET reply = ? WHERE id = ?";
+  			String sql = "UPDATE questions SET reply = ?, reply_date = CURRENT_TIMESTAMP WHERE id = ?";
 
   			PreparedStatement pStmt = conn.prepareStatement(sql);
   			pStmt.setString(1, reply);

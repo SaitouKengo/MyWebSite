@@ -73,9 +73,9 @@ public class Mentor extends HttpServlet {
 			String mentorName = request.getParameter("mentorName");
 		    String subject = request.getParameter("subject");
 			String question = request.getParameter("question");
-			String questionDate = request.getParameter("questionDate");
 
-			 boolean check = QuestionDao.messageInsert(userId,mentorId,userName,mentorName,subject,question,questionDate);
+
+			 boolean check = QuestionDao.messageInsert(userId,mentorId,userName,mentorName,subject,question);
 
 
 		        if(check) {

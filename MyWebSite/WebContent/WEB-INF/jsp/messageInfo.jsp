@@ -31,11 +31,12 @@
 		<div class="alert alert-info text-center " role="alert">
 			<h5 class="alert-heading">相談者: ${detailQuestion.mentorName}</h5>
 			<hr>
-			<p>相談日時: ${detailQuestion.questionDate}</p>
+			<p>相談日時: <fmt:parseDate  var="questionDate" value="${detailQuestion.questionDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+              <fmt:formatDate value="${questionDate}" pattern="yyyy年MM月dd日mm時ss分" /></p>
 
 			<p>件名: ${detailQuestion.userName}</p>
 			<hr>
-			<p class="mb-0">
+			<p class="mb-0" >
 				相談内容:<br><br> ${detailQuestion.question}
 			</p>
 		</div>
@@ -44,7 +45,8 @@
 		<div class="alert alert-success text-center" role="alert">
 			<h5 class="alert-heading">返信者: ${detailQuestion.subject}</h5>
 			<hr>
-			<p>返信日時: ${detailQuestion.replyDate} </p>
+			<p>返信日時: <fmt:parseDate  var="replyDate" value="${detailQuestion.replyDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+              <fmt:formatDate value="${replyDate}" pattern="yyyy年MM月dd日mm時ss分" /> </p>
 
 			<p>件名: ${detailQuestion.userName}</p>
 			<hr>

@@ -45,7 +45,8 @@
 					<tr>
 						<td>${question.mentorName}</td>
 						<td>${question.subject}</td>
-						<td>${question.questionDate}</td>
+						<td><fmt:parseDate  var="questionDate" value="${question.questionDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+              <fmt:formatDate value="${questionDate}" pattern="yyyy年MM月dd日HH時mm分" /></td>
 						<td><a class="btn btn-primary" href="UserMessageInfo?id=${question.id}">詳細</a>
 					</tr>
 

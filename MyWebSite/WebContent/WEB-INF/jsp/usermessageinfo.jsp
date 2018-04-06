@@ -30,7 +30,8 @@
 		<div class="alert alert-info" role="alert">
 			<h5 class="alert-heading">相談者: ${userInfo.name}</h5>
 			<hr>
-			<p>相談日時: ${detailQuestion.questionDate}</p>
+			<p>相談日時:<fmt:parseDate  var="questionDate" value="${detailQuestion.questionDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+              <fmt:formatDate value="${questionDate}" pattern="yyyy年MM月dd日HH時mm分" /></p>
 
 			<p>件名: ${detailQuestion.userName}</p>
 			<hr>
@@ -43,7 +44,8 @@
 		<div class="alert alert-success" role="alert">
 			<h5 class="alert-heading">返信者: ${detailQuestion.subject}</h5>
 			<hr>
-			<p>返信日時: ${detailQuestion.replyDate} </p>
+			<p>返信日時: <fmt:parseDate  var="replyDate" value="${detailQuestion.replyDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+              <fmt:formatDate value="${replyDate}" pattern="yyyy年MM月dd日HH時mm分" /> </p>
 
 			<p>件名: ${detailQuestion.userName}</p>
 			<hr>

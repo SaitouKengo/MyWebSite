@@ -45,7 +45,8 @@
 					<c:if test="${userInfo.id == question.mentorId}">
 						<td>${question.userName}</td>
 						<td>${question.subject}</td>
-						<td>${question.questionDate}</td>
+						<td><fmt:parseDate  var="questionDate" value="${question.questionDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+              <fmt:formatDate value="${questionDate}" pattern="yyyy年MM月dd日HH時mm分" /></td>
 						<td> <a class="btn btn-primary" href="MessageInfo?id=${question.id}">詳細</a></td>
 					</c:if>
 					</tr>

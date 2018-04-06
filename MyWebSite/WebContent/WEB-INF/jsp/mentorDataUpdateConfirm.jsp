@@ -35,7 +35,7 @@
 
 		<div class="button_center">
 			<a class="btn btn-primary" href="MentorDataUpdateResult">更新</a> <a
-				class="btn btn-danger" href="MentorData">戻る</a>
+				class="btn btn-danger" href="MentorData?id=${userInfo.id}">戻る</a>
 		</div>
 
 	</div>

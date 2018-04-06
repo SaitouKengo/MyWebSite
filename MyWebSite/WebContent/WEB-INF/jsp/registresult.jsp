@@ -23,11 +23,15 @@
 
 		<h2 class="text-center">登録完了</h2>
 
-		<br><br>名前: まさし
-		<br><br>住所: 高松
-		<br><br>ログインID: coco1
-		<br><br>パスワード: ●●●●
 
+
+
+
+		<br><br>ログインID: ${userList.loginId}
+		<br><br>名前: ${userList.userName}
+		<br><br>生年月日: ${userList.birthDate}
+		<br><br>パスワード: ${userList.password}
+		<br><br>自己紹介: ${userList.profile}
 
 		<br><br><br> 上記内容で登録しました。
 		<div class="button_center">

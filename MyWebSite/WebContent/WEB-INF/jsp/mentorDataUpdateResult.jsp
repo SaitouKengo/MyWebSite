@@ -33,7 +33,7 @@
 
 		<br><br><br> 上記内容で更新しました。<br><br>
 		<div class="button_center">
-			<a class="btn btn-primary" href="MentorData">メンター情報へ</a>
+			<a class="btn btn-primary" href="MentorData?id=${userInfo.id}">メンター情報へ</a>
 		</div>
 
 	</div>

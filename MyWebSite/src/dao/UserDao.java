@@ -408,29 +408,30 @@ public class UserDao {
     }
 
     //新規登録用メソッド
-	public static boolean userInsert(String loginId,String pass,String passConfirm,String name,String birthDate) {
+	public static boolean userInsert(String loginId,String userName,String birthDate,String password,String passConfirm,String profile) {
 		Connection conn = null;
 	try {
 		conn = DBManager.getConnection();
 
 		//未入力チェック
-		if(loginId==""||pass==""||passConfirm==""||name==""||birthDate=="") {
+		if(loginId==""||password==""||passConfirm==""||userName==""||birthDate==""||profile=="") {
 			return false;
 		}
 
 		//入力が正しいかのチェック
-		if(!(pass.equals(passConfirm))||!(birthDate.length()==10)) {
+		if(!(password.equals(passConfirm))||!(birthDate.length()==10)) {
 			return false;
 		}
 
 
-		String sql = "INSERT INTO user(login_id, name, birth_date, password,  create_date, update_date) VALUES (?, ?, ?, ?, NOW(), NOW())";
+		String sql = "INSERT INTO user(login_id, name, birth_date, password,  create_date, update_date, profile) VALUES (?, ?, ?, ?, NOW(), NOW(), ?)";
 
 		PreparedStatement pStmt = conn.prepareStatement(sql);
         pStmt.setString(1, loginId);
-        pStmt.setString(2, name);
+        pStmt.setString(2, userName);
         pStmt.setString(3, birthDate);
-        pStmt.setString(4, Util.convertmd5(pass));
+        pStmt.setString(4, Util.convertmd5(password));
+        pStmt.setString(5, profile);
 
 
         pStmt.executeUpdate();

@@ -18,8 +18,9 @@
 
 		<h2 class="text-center">ユーザー新規登録</h2>
 
-		<form>
+		<form  action="Regist" method="post">
 
+		<input type="hidden" name="userType" value="1">
 
 
 			<div class="form-group">
@@ -32,7 +33,7 @@
 			</div>
 			<div class="form-group">
 				<label for="formGroupExampleInput">生年月日</label> <input type="date"
-					 name="birthDate" class="form-control" id="formGroupExampleInput3" placeholder="">
+					  name="birthDate" class="form-control" id="formGroupExampleInput3" placeholder="">
 			</div>
 			<div class="form-group">
 				<label for="formGroupExampleInput2">パスワード</label> <input
@@ -50,12 +51,14 @@
 					placeholder="">
 			</div>
 
-		</form>
+
 
 		<br>
 		<div class="button_center">
-			<a class="btn btn-primary" href="RegistResult">登録</a>
+			<button class="btn btn-primary" type="submit">登録</button>
 		</div>
+
+		</form>
 
 		<ul class="nav justify-content-end">
 			<li class="nav-item"><a class="nav-link active"

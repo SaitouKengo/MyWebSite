@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ユーザー登録完了</title>
+<title>ユーザー更新完了</title>
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 </head>
@@ -13,25 +13,23 @@
 	    <li class="nav"><a class="nav-link active"
 			href="UserList">TOP画面へ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="UserData">ユーザ名さん</a></li>
+			href="MentorData">${userInfo.name}さん</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="MentorLogin">メンター用ページ</a></li>
+			href="Login">ユーザー用ページ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link disabled"
 			href="Logout">ログアウト</a></li>
 	</ul>
 	<div class="container">
 		<br>
 
-
-
 <div class="alert alert-info" role="alert">
-			<h5 class="alert-heading   text-center">ユーザー登録が完了しました。</h5>
+			<h5 class="alert-heading   text-center">メンター更新が完了しました。</h5>
 
 		</div>
 
 		<br><br>
 		<div class="button_center">
-			<a class="btn btn-primary" href="Login">ログイン画面へ</a>
+			<a class="btn btn-primary" href="MentorData?id=${userInfo.id}">メンター情報画面へ</a>
 		</div>
 
 	</div>

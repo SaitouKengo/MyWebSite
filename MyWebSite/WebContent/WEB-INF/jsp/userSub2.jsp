@@ -14,7 +14,7 @@
 	    <li class="nav"><a class="nav-link active"
 			href="UserList">TOP画面へ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="UserData">${userInfo.name}さん</a></li>
+			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
 			href="MentorLogin">メンター用ページ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link disabled"
@@ -29,6 +29,9 @@
 		<h2 class="text-center">ユーザ情報更新</h2>
 
 		<form method="post" action="UserSub2">
+
+		<input type="hidden" name="id" value="${userInfo.id}">
+
 			<div class="form-group">
 				<label for="formGroupExampleInput">ログインID</label> <input type="text"
 					name="loginId" class="form-control" id="formGroupExampleInput" placeholder="${userInfo.loginId}">
@@ -61,7 +64,7 @@
 
 		<ul class="nav justify-content-end">
 			<li class="nav-item"><a class="nav-link active"
-				href="UserData">戻る</a></li>
+				href="UserData?id=${userInfo.id}">戻る</a></li>
 
 
 

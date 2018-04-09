@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UserDao;
+
 /**
  * Servlet implementation class MentorSub2
  */
@@ -31,6 +33,37 @@ public class MentorSub2 extends HttpServlet {
 		// フォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorSub2.jsp");
 				dispatcher.forward(request, response);
+			}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		 request.setCharacterEncoding("UTF-8");
+
+		 // リクエストパラメータの入力項目を取得
+		    String loginId = request.getParameter("loginId");
+			String pass = request.getParameter("pass");
+			String passConfirm = request.getParameter("passConfirm");
+		    String profile = request.getParameter("profile");
+		    String picture = request.getParameter("picture");
+		    String id = request.getParameter("id");
+
+
+
+			 boolean check = UserDao.mentorUpdate(loginId,pass,passConfirm,profile,picture,id);
+
+
+		        if(check) {
+		        	response.sendRedirect("MentorSub2Result");
+
+		           return;
+		        }else {
+
+		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorSub2.jsp");
+		           dispatcher.forward(request,response);
+		           return;
+		        }
+
 			}
 
 		}

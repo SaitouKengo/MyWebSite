@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,7 +14,7 @@
 	    <li class="nav"><a class="nav-link active"
 			href="UserList">TOP画面へ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="UserData">${userInfo.name}さん</a></li>
+			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
 			href="MentorLogin">メンター用ページ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link disabled"
@@ -24,9 +25,11 @@
 
 		<h2 class="text-center">ユーザー情報</h2>
 
-		<br>
-
-
+		 <br>
+		 <div align="center">
+		 ${detailUser.profile}
+		 </div>
+		 <br><br>
 
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered"
@@ -41,9 +44,9 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>${userInfo.name}</td>
-						<td>${userInfo.loginId}</td>
-						<td>1994年11月11日 </td>
+						<td>${detailUser.name}</td>
+						<td>${detailUser.loginId}</td>
+						<td><fmt:formatDate value="${detailUser.birth_date}" pattern="yyyy年MM月dd日"/></td>
 						<td><a class="btn btn-primary" href="UserSub2">情報更新</a>
 						<a class="btn btn-success" href="UserBuyHistryDetail">相談履歴</a>
 

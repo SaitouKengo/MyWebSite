@@ -341,31 +341,31 @@ public class UserDao {
 
 
 
-    	//更新用メソッド
-    public static boolean userUpdate(String id, String loginId,String pass,String passConfirm,String name,String birthDate) {
+    	//ユーザー更新用メソッド
+    public static boolean userUpdate( String loginId, String name, String pass,String passConfirm,String profile,String id) {
 		Connection conn = null;
 		try {
 		conn = DBManager.getConnection();
 
 		//未入力チェック
-		if(loginId.equals("")||name.equals("")||birthDate.equals("")) {
+		if(loginId.equals("")||name.equals("")||pass.equals("")||passConfirm.equals("")) {
 			return false;
 		}
 
-		//入力が正しいかのチェック
-		if(!(pass.equals(passConfirm))||!(birthDate.length()==10)) {
+		//パスワード入力が正しいかチェック
+		if(!(pass.equals(passConfirm))) {
 			return false;
 		}
 
 
 
 		if(pass.equals("")&&passConfirm.equals("")) {
-			String sql = "UPDATE user SET login_id = ?, name = ?, birth_date = ? WHERE id = ? ";
+			String sql = "UPDATE user SET login_id = ?, name = ?, profile = ? WHERE id = ? ";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 	        pStmt.setString(1, loginId);
 	        pStmt.setString(2, name);
-	        pStmt.setString(3, birthDate);
+	        pStmt.setString(3, profile);
 	        pStmt.setString(4, id);
 
 	        pStmt.executeUpdate();
@@ -374,15 +374,15 @@ public class UserDao {
 
 		}else {
 
-		String sql = "UPDATE user SET login_id = ?, name = ?, birth_date = ?, password = ? WHERE id = ? ";
+		String sql = "UPDATE user SET login_id = ?, name = ?, password = ?, profile = ? WHERE id = ? ";
 
 
 
 		PreparedStatement pStmt = conn.prepareStatement(sql);
         pStmt.setString(1, loginId);
         pStmt.setString(2, name);
-        pStmt.setString(3, birthDate);
-        pStmt.setString(4, Util.convertmd5(pass));
+        pStmt.setString(3, Util.convertmd5(pass));
+        pStmt.setString(4, profile);
         pStmt.setString(5, id);
 
         pStmt.executeUpdate();
@@ -407,14 +407,84 @@ public class UserDao {
 
     }
 
-    //新規登録用メソッド
-	public static boolean userInsert(String loginId,String userName,String birthDate,String password,String passConfirm,String profile) {
+
+
+  //メンター更新用メソッド
+    public static boolean mentorUpdate(String loginId, String pass,String passConfirm,String profile, String picture, String id) {
+		Connection conn = null;
+		try {
+		conn = DBManager.getConnection();
+
+		//未入力チェック
+		if(loginId.equals("")||pass.equals("")||passConfirm.equals("")) {
+			return false;
+		}
+
+		//パスワード入力が正しいかチェック
+		if(!(pass.equals(passConfirm))) {
+			return false;
+		}
+
+
+
+		if(pass.equals("")&&passConfirm.equals("")) {
+			String sql = "UPDATE user SET login_id = ?, profile = ?, picture = ? WHERE id = ? ";
+
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+	        pStmt.setString(1, loginId);
+	        pStmt.setString(2, profile);
+	        pStmt.setString(3, picture);
+	        pStmt.setString(4, id);
+
+	        pStmt.executeUpdate();
+
+	        return true;
+
+		}else {
+
+		String sql = "UPDATE user SET login_id = ?, password = ?, profile = ?, picture = ? WHERE id = ? ";
+
+
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+        pStmt.setString(1, loginId);
+        pStmt.setString(2, Util.convertmd5(pass));
+        pStmt.setString(3, profile);
+        pStmt.setString(4, picture);
+        pStmt.setString(5, id);
+
+        pStmt.executeUpdate();
+
+		return true;
+		}
+
+	}catch(SQLException e) {
+		e.printStackTrace();
+		return false;
+	}finally {
+		//データベース切断
+		if(conn!=null) {
+			try {
+				conn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+				return false;
+			}
+		}
+	}
+
+    }
+
+
+
+    //ユーザー新規登録用メソッド
+	public static boolean userInsert(String loginId,String userName,String birthDate,String password,String passConfirm,String profile, int userType) {
 		Connection conn = null;
 	try {
 		conn = DBManager.getConnection();
 
 		//未入力チェック
-		if(loginId==""||password==""||passConfirm==""||userName==""||birthDate==""||profile=="") {
+		if(loginId==""||password==""||passConfirm==""||userName==""||birthDate=="") {
 			return false;
 		}
 
@@ -424,7 +494,7 @@ public class UserDao {
 		}
 
 
-		String sql = "INSERT INTO user(login_id, name, birth_date, password,  create_date, update_date, profile) VALUES (?, ?, ?, ?, NOW(), NOW(), ?)";
+		String sql = "INSERT INTO user(login_id, name, birth_date, password,  create_date, update_date, profile, user_type) VALUES (?, ?, ?, ?, NOW(), NOW(), ?, ?)";
 
 		PreparedStatement pStmt = conn.prepareStatement(sql);
         pStmt.setString(1, loginId);
@@ -432,6 +502,8 @@ public class UserDao {
         pStmt.setString(3, birthDate);
         pStmt.setString(4, Util.convertmd5(password));
         pStmt.setString(5, profile);
+        pStmt.setInt(6, userType);
+
 
 
         pStmt.executeUpdate();
@@ -453,6 +525,63 @@ public class UserDao {
 		}
     }
 }
+
+
+
+
+	//メンター新規登録用メソッド
+		public static boolean mentorInsert(String loginId,String userName,String birthDate,String password,String passConfirm,String profile, String picture, int userType) {
+			Connection conn = null;
+		try {
+			conn = DBManager.getConnection();
+
+			//未入力チェック
+			if(loginId==""||password==""||passConfirm==""||userName==""||birthDate=="") {
+				return false;
+			}
+
+			//入力が正しいかのチェック
+			if(!(password.equals(passConfirm))||!(birthDate.length()==10)) {
+				return false;
+			}
+
+
+			String sql = "INSERT INTO user(login_id, name, birth_date, password,  create_date, update_date, profile, picture, user_type) VALUES (?, ?, ?, ?, NOW(), NOW(), ?, ?, ?)";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+	        pStmt.setString(1, loginId);
+	        pStmt.setString(2, userName);
+	        pStmt.setString(3, birthDate);
+	        pStmt.setString(4, Util.convertmd5(password));
+	        pStmt.setString(5, profile);
+	        pStmt.setString(6, picture);
+	        pStmt.setInt(7, userType);
+
+
+
+	        pStmt.executeUpdate();
+
+			return true;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}finally {
+			//データベース切断
+			if(conn!=null) {
+				try {
+					conn.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+					return false;
+				}
+			}
+	    }
+	}
+
+
+
+
 
 
 

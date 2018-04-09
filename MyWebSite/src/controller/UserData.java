@@ -24,15 +24,20 @@ public class UserData extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
     	    String detailId = (String)request.getParameter("id");
 
-		 UserDao userDao = new UserDao();
-		    User detailUser = userDao.findByUserInfo(detailId);
+    	    if(detailId!=null)   {
 
-		    request.setAttribute("detailUser", detailUser);
+		//DBからユーザーの情報を取得
+	    UserDao userDao = new UserDao();
+	    User detailUser = userDao.findByUserInfo(detailId);
 
-		// フォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userdata.jsp");
-				dispatcher.forward(request, response);
-			}
+	    request.setAttribute("detailUser", detailUser);
 
-		}
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userdata.jsp");
+        dispatcher.forward(request,response);
+        return;
+    }
+
+
+}
+}
 

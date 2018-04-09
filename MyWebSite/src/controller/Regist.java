@@ -35,18 +35,19 @@ public class Regist extends HttpServlet {
 			String password = request.getParameter("password");
 			String passConfirm = request.getParameter("passConfirm");
 		    String profile = request.getParameter("profile");
+		    String userType = request.getParameter("userType");
 
 
-			 boolean check = UserDao.userInsert(loginId,userName,birthDate,password,passConfirm,profile);
+			 boolean check = UserDao.userInsert(loginId,userName,birthDate,password,passConfirm,profile, Integer.parseInt(userType));
 
 
 		        if(check) {
-		        	response.sendRedirect("ResistResult");
+		        	response.sendRedirect("RegistResult");
 
 		           return;
 		        }else {
 
-		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/resist.jsp");
+		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist.jsp");
 		           dispatcher.forward(request,response);
 		           return;
 		        }

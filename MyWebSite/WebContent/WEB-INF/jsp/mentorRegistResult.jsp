@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,17 +22,14 @@
 	<div class="container">
 		<br>
 
-		<h2 class="text-center">メンター登録完了</h2>
+		<div class="alert alert-info" role="alert">
+			<h5 class="alert-heading   text-center">メンター登録が完了しました。</h5>
 
-		<br><br>名前: 間 白男
-		<br><br>自己紹介: 医者です
-		<br><br>ログインID: pinoko
-		<br><br>パスワード: ●●●●
+		</div>
 
-
-		<br><br><br> 上記内容で登録しました。
+		<br><br>
 		<div class="button_center">
-			<a class="btn btn-primary" href="mentorLogin.html">メンターログイン画面へ</a>
+			<a class="btn btn-primary" href="MentorLogin">メンターログイン画面へ</a>
 		</div>
 
 	</div>

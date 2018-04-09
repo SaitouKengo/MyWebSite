@@ -50,8 +50,8 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>${userInfo.name}</td>
-						<td>${userInfo.loginId}</td>
+						<td>${detailMentor.name}</td>
+						<td>${detailMentor.loginId}</td>
 						<td><fmt:formatDate value="${detailMentor.birth_date}" pattern="yyyy年MM月dd日"/></td>
 						<td><a class="btn btn-primary" href="MentorSub2">情報更新</a>
 

@@ -9,16 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/RegistResult")
-public class RegistResult extends HttpServlet {
+/**
+ * Servlet implementation class UserSub2Result
+ */
+@WebServlet("/UserSub2Result")
+public class UserSub2Result extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    public UserSub2Result() {
+        super();
+
+    }
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
 		// フォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registresult.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userSub2Result.jsp");
 		dispatcher.forward(request, response);
 	}
 }

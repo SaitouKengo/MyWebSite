@@ -19,7 +19,7 @@
 	    <li class="nav"><a class="nav-link active"
 			href="UserList">TOP画面へ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="UserData">${userInfo.name}さん</a></li>
+			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
 			href="MentorLogin">メンター用ページ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link disabled"

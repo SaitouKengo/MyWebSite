@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,23 +32,16 @@ public class Books extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setAttribute("check","");
-		request.setCharacterEncoding("UTF-8");
-    	    String detailId = (String)request.getParameter("id");
+		// 書籍一覧情報を取得
+		BooksDao booksDao = new BooksDao();
+		List<beans.Books> bookList = booksDao.findAll();
 
-    	    if(detailId!=null)   {
+		// リクエストスコープにユーザ一覧情報をセット
+		request.setAttribute("bookList", bookList);
 
-	    	//DBからユーザーの情報を取得
-		    BooksDao booksDao = new BooksDao();
-		    beans.Books detailBooks = booksDao.findByBookInfo(detailId);
+		 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/books.jsp");
+         dispatcher.forward(request,response);
 
-		    request.setAttribute("detailBooks", detailBooks);
-
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/books.jsp");
-            dispatcher.forward(request,response);
-            return;
-	    }
-
-	}
+}
 
 }

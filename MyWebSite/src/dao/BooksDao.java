@@ -66,7 +66,7 @@ public class BooksDao {
 	            conn = DBManager.getConnection();
 
 	            // SELECT文を準備
-	            String sql = "SELECT * FROM books WHERE author = ?";
+	            String sql = "SELECT * FROM books WHERE id = ?";
 
 	             // SELECTを実行し、結果表を取得
 	            PreparedStatement pStmt = conn.prepareStatement(sql);

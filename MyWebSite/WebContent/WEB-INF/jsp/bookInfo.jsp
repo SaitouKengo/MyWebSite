@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>書籍一覧</title>
+<title>書籍詳細</title>
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 </head>
@@ -17,55 +17,42 @@
 		<li class="nav justify-content-end"><a class="nav-link active"
 			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="MentorLogin">メンター用ページ</a></li>
+			href="Login">メンター用ページ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link disabled"
 			href="Logout">ログアウト</a></li>
 	</ul>
 	<div class="container">
 		<br>
 
-		<h2 class="text-center">書籍一覧</h2>
+		<h2 class="text-center">書籍詳細</h2>
 
 		<br><br>
-		<div class="table-responsive">
-			<table class="table table-striped table-bordered"
-				class="table table-bordered">
-				<thead>
-					<tr>
-						<th>著者</th>
-						<th>書籍名</th>
-						<th>価格</th>
-						<th></th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<c:forEach var="books" items="${bookList}">
-					<tr>
-						<td>${books.author}</td>
-						<td>${books.book_name}</td>
-						<td>${books.price}円 </td>
-
-						<td>
-						<a class="btn btn-primary" href="BookInfo?id=${books.id}">詳細</a>
-						 <a class="btn btn-success" href="#">購入</a>
-						 </td>
-
-					</tr>
-
-					</c:forEach>
 
 
-				</tbody>
+		<div class="alert alert-success text-center" role="alert">
+			<h5 class="alert-heading">書籍名: ${detailBooks.book_name}</h5>
+			<hr>
+			<p>著者: ${detailBooks.author}</p>
 
-			</table>
+			<p>価格: ${detailBooks.price}円</p>
+			<hr>
+			<p class="mb-0">
+				内容:<br><br> ${detailBooks.book_info}</p>
+				<br>
+				<a class="btn btn-success" href="#">カートに追加</a>
+
 		</div>
+		<br>
 
-		<div class="button_center">
-			 <a class="btn btn-primary" href="Buy">レジに進む</a><br><br>
+		<br>
+
+		<ul class="nav justify-content-end">
+			<li class="nav-item"><a class="nav-link active"
+				href="Books">戻る</a></li>
+
+		</ul>
+
 		</div>
-
-</div>
 
 </body>
 </html>

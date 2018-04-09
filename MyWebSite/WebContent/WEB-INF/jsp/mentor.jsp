@@ -56,7 +56,7 @@
 						<td>${detailUser.loginId}</td>
 						<td>${detailUser.name}</td>
 						<td><fmt:formatDate value="${detailUser.birth_date}" pattern="yyyy年MM月dd日"/></td>
-						<td><a class="btn btn-success" href="Books?id=${detailUser.name}">書籍一覧</a></td>
+						<td><a class="btn btn-success" href="Books">書籍一覧</a></td>
 
 					</tr>
 

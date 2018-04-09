@@ -36,7 +36,35 @@
         ${detailUser.profile}
 		</div>
 
-		 <br><br>
+		 <br>
+		 <div class="table-responsive">
+			<table class="table table-striped table-bordered"
+				class="table table-bordered">
+				<thead>
+					<tr>
+						<th>メンターID</th>
+						<th>メンター名</th>
+						<th>生年月日</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+
+
+						<td>${detailUser.loginId}</td>
+						<td>${detailUser.name}</td>
+						<td><fmt:formatDate value="${detailUser.birth_date}" pattern="yyyy年MM月dd日"/></td>
+						<td><a class="btn btn-success" href="Books?id=${detailUser.name}">書籍一覧</a></td>
+
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		 <br>
 
 		<form method="post" action="Mentor">
 

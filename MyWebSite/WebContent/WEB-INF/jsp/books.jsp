@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +13,13 @@
 <body background="picture/p0526_m.jpg">
 	<ul class="navbar justify-content bg-dark">
 	    <li class="nav"><a class="nav-link active"
-			href="userList.html">TOP画面へ</a></li>
+			href="UserList">TOP画面へ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="userdata.html">ユーザ名さん</a></li>
+			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
 		<li class="nav justify-content-end"><a class="nav-link active"
-			href="mentorLogin.html">メンター用ページ</a></li>
+			href="MentorLogin">メンター用ページ</a></li>
 		<li class="nav justify-content-end"><a class="nav-link disabled"
-			href="logout.html">ログアウト</a></li>
+			href="Logout">ログアウト</a></li>
 	</ul>
 	<div class="container">
 		<br>
@@ -32,68 +35,29 @@
 						<th>著者</th>
 						<th>書籍名</th>
 						<th>価格</th>
+						<th>内容</th>
 						<th></th>
 					</tr>
 				</thead>
+
 				<tbody>
+
+
 					<tr>
-						<td>山田太郎</td>
-						<td>父ちゃんごめん</td>
-						<td>1200円 </td>
+						<td>${detailBooks.author}</td>
+						<td>${detailBooks.book_name}</td>
+						<td>${detailBooks.price}円 </td>
+						<td>${detailBooks.book_info} </td>
 						<td> <a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>山田太郎</td>
-						<td>日本劇画物見遊山</td>
-						<td>1500円</td>
-						<td><a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>Anne Fathaway</td>
-						<td>ALL ABOUT THE CHARM OF ANNE FATHAWAY</td>
-						<td>800円</td>
-						<td><a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>Anne Fathaway</td>
-						<td>How to wear Prada</td>
-						<td>2200円 </td>
-						<td> <a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>宮台真一</td>
-						<td>これが答案だ！</td>
-						<td>1600円</td>
-						<td><a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>宮台真一</td>
-						<td>終わりなき非日常を生きろ</td>
-						<td>1300円</td>
-						<td><a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>東村博之</td>
-						<td>不敵な思考</td>
-						<td>1500円 </td>
-						<td> <a class="btn btn-success" href="#">購入</a></td>
-					</tr>
-					<tr>
-						<td>東村博之</td>
-						<td>4chanまでも捨てた理由</td>
-						<td>1200円</td>
-						<td><a class="btn btn-success" href="#">購入</a></td>
 					</tr>
 
 				</tbody>
+
 			</table>
 		</div>
 
-
-
-
 		<div class="button_center">
-			 <a class="btn btn-primary" href="buy.html">レジに進む</a><br><br>
+			 <a class="btn btn-primary" href="Buy">レジに進む</a><br><br>
 		</div>
 
 	</div>

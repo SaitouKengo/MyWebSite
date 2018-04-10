@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,12 @@
 
 		<h2 class="text-center text">メンターログイン画面</h2>
 		<br>
+
+		<c:if test="${errMsg != null}">
+			<div class="alert alert-danger text-center" role="alert">${errMsg}</div>
+
+		</c:if>
+
 		<form action="MentorLogin" method="post">
 
 			<div class="button_right">

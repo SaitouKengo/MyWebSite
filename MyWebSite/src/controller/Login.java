@@ -21,16 +21,13 @@ public class Login extends HttpServlet {
 
     public Login() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 
 
-
-
-    	// フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -62,7 +59,7 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("userInfo", user);
 
-		// ユーザ一覧のサーブレットにリダイレクト
+
 		response.sendRedirect("UserList");
 	}
 }

@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import dao.UserDao;
 
 /**
- * Servlet implementation class MentorSub2
+ * Servlet implementation class MentorUpdate
  */
-@WebServlet("/MentorSub2")
-public class MentorSub2 extends HttpServlet {
+@WebServlet("/MentorUpdate")
+public class MentorUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MentorSub2() {
+    public MentorUpdate() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +31,7 @@ public class MentorSub2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// フォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorSub2.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorUpdate.jsp");
 				dispatcher.forward(request, response);
 			}
 
@@ -54,12 +54,12 @@ public class MentorSub2 extends HttpServlet {
 
 
 		        if(check) {
-		        	response.sendRedirect("MentorSub2Result");
+		        	response.sendRedirect("MentorUpdateResult");
 
 		           return;
 		        }else {
 
-		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorSub2.jsp");
+		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorUpdate.jsp");
 		           dispatcher.forward(request,response);
 		           return;
 		        }

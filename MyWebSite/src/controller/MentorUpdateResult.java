@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MentorSub2
+ * Servlet implementation class MentorUpdate
  */
-@WebServlet("/MentorSub2Result")
-public class MentorSub2Result extends HttpServlet {
+@WebServlet("/MentorUpdateResult")
+public class MentorUpdateResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MentorSub2Result() {
+    public MentorUpdateResult() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,7 @@ public class MentorSub2Result extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// フォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorSub2Result.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorUpdateResult.jsp");
 				dispatcher.forward(request, response);
 			}
 

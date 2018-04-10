@@ -46,7 +46,7 @@
 						<td>${detailMentor.name}</td>
 						<td>${detailMentor.loginId}</td>
 						<td><fmt:formatDate value="${detailMentor.birth_date}" pattern="yyyy年MM月dd日"/></td>
-						<td><a class="btn btn-primary" href="MentorSub2">情報更新</a>
+						<td><a class="btn btn-primary" href="MentorUpdate">情報更新</a>
 
 					</tr>
 

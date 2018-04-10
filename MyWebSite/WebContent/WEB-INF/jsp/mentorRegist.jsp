@@ -9,15 +9,16 @@
 </head>
 <body background="picture/p0526_m.jpg">
 
-	<ul class="navbar justify-content bg-dark">
 
-	</ul>
 	<div class="container">
 
 
 
+		<br>
 
 		<h2 class="text-center">メンター新規登録</h2>
+
+		<br>
 
 		<form  action="MentorRegist" method="post">
 

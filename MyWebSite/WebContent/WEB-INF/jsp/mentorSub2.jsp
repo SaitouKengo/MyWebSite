@@ -8,16 +8,8 @@
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 </head>
 <body background="picture/p0526_m.jpg">
-	<ul class="navbar justify-content bg-dark">
-	    <li class="nav"><a class="nav-link active"
-			href="MessageList">TOP画面へ</a></li>
-		<li class="nav justify-content-end"><a class="nav-link active"
-			href="MentorData">${userInfo.name}さん</a></li>
-		<li class="nav justify-content-end"><a class="nav-link active"
-			href="Login">ユーザー用ページ</a></li>
-		<li class="nav justify-content-end"><a class="nav-link disabled"
-			href="Logout">ログアウト</a></li>
-	</ul>
+
+	<jsp:include page="/baselayout/header2.jsp" />
 
 	<div class="container">
 

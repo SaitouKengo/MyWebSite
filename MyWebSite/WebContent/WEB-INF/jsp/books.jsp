@@ -11,16 +11,9 @@
 </head>
 
 <body background="picture/p0526_m.jpg">
-	<ul class="navbar justify-content bg-dark">
-	    <li class="nav"><a class="nav-link active"
-			href="UserList">TOP画面へ</a></li>
-		<li class="nav justify-content-end"><a class="nav-link active"
-			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
-		<li class="nav justify-content-end"><a class="nav-link active"
-			href="MentorLogin">メンター用ページ</a></li>
-		<li class="nav justify-content-end"><a class="nav-link disabled"
-			href="Logout">ログアウト</a></li>
-	</ul>
+
+<jsp:include page="/baselayout/header.jsp" />
+
 	<div class="container">
 		<br>
 

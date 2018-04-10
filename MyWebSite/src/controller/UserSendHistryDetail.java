@@ -14,9 +14,9 @@ import beans.Question;
 import dao.QuestionDao;
 
 
-@WebServlet("/UserBuyHistryDetail")
+@WebServlet("/UserSendHistryDetail")
 
-public class UserBuyHistryDetail extends HttpServlet {
+public class UserSendHistryDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class UserBuyHistryDetail extends HttpServlet {
 				request.setAttribute("messageList", messageList);
 
 				// message覧のjspにフォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userbuyhistrydetail.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/usersendhistrydetail.jsp");
 				dispatcher.forward(request, response);
 			}
 

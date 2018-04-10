@@ -79,7 +79,7 @@ public class Mentor extends HttpServlet {
 
 
 		        if(check) {
-		        	response.sendRedirect("UserInfo");
+		        	response.sendRedirect("SendComp");
 
 		           return;
 		        }else {

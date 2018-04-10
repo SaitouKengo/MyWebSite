@@ -20,7 +20,7 @@
 
 		<h2 class="text-center">ユーザ情報更新</h2>
 
-		<form method="post" action="UserSub2">
+		<form method="post" action="UserUpdate">
 
 		<input type="hidden" name="id" value="${userInfo.id}">
 

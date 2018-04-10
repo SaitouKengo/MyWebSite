@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import dao.UserDao;
 
 /**
- * Servlet implementation class UserSub2
+ * Servlet implementation class UserUpdate
  */
-@WebServlet("/UserSub2")
-public class UserSub2 extends HttpServlet {
+@WebServlet("/UserUpdate")
+public class UserUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserSub2() {
+    public UserUpdate() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,7 @@ public class UserSub2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// フォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userSub2.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userUpdate.jsp");
 				dispatcher.forward(request, response);
 			}
 
@@ -55,12 +55,12 @@ public class UserSub2 extends HttpServlet {
 
 
 		        if(check) {
-		        	response.sendRedirect("UserSub2Result");
+		        	response.sendRedirect("UserUpdateResult");
 
 		           return;
 		        }else {
 
-		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userSub2.jsp");
+		        	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userUpdate.jsp");
 		           dispatcher.forward(request,response);
 		           return;
 		        }

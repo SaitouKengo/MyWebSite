@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserSub2Result
+ * Servlet implementation class UserUpdateResult
  */
-@WebServlet("/UserSub2Result")
-public class UserSub2Result extends HttpServlet {
+@WebServlet("/UserUpdateResult")
+public class UserUpdateResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
-    public UserSub2Result() {
+    public UserUpdateResult() {
         super();
 
     }
@@ -27,7 +27,7 @@ public class UserSub2Result extends HttpServlet {
 
 
 		// フォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userSub2Result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userUpdateResult.jsp");
 		dispatcher.forward(request, response);
 	}
 }

@@ -40,8 +40,8 @@
 						<td>${detailUser.name}</td>
 						<td>${detailUser.loginId}</td>
 						<td><fmt:formatDate value="${detailUser.birth_date}" pattern="yyyy年MM月dd日"/></td>
-						<td><a class="btn btn-primary" href="UserSub2">情報更新</a>
-						<a class="btn btn-success" href="UserBuyHistryDetail">相談履歴</a>
+						<td><a class="btn btn-primary" href="UserUpdate">情報更新</a>
+						<a class="btn btn-success" href="UserSendHistryDetail">相談履歴</a>
 
 					</tr>
 

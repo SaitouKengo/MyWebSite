@@ -22,7 +22,7 @@
 
 		<br><br>
 		<div class="button_center">
-			<a class="btn btn-primary" href="UserData">ユーザー情報画面へ</a>
+			<a class="btn btn-primary" href="UserData?id=${userInfo.id}">ユーザー情報画面へ</a>
 		</div>
 
 	</div>

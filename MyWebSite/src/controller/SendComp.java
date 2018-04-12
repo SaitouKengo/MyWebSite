@@ -13,9 +13,9 @@ import javax.servlet.http.HttpSession;
 import beans.User;
 
 /**
- * Servlet implementation class UserInfo
+ * Servlet implementation class SendComp
  */
-@WebServlet("/UserInfo")
+@WebServlet("/SendComp")
 public class SendComp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

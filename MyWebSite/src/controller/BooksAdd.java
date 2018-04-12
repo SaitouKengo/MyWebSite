@@ -29,7 +29,7 @@ public class BooksAdd extends HttpServlet {
 			//選択された商品のIDを型変換し利用
 			int id = Integer.parseInt(request.getParameter("book_id"));
 			//対象のアイテム情報を取得
-			Books book = Books.getInt(id);
+			Books book = Books.findByBookInfo(id);
 
 			//追加した商品を表示するためリクエストパラメーターにセット
 			request.setAttribute("book", book);

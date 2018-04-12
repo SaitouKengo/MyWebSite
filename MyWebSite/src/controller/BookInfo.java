@@ -64,4 +64,16 @@ public class BookInfo extends HttpServlet {
 
 	}
 
-}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    				// リクエストスコープにメッセージをセット
+    				request.setAttribute("cartMsg", "カートに書籍を追加しました。");
+
+    				// Cartにリダイレクト
+    				response.sendRedirect("Cart");
+    				return;
+    			}
+
+    	}
+
+

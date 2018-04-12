@@ -16,7 +16,7 @@ public class BuyDetailDao {
 		try {
 			con = DBManager.getConnection();
 			st = con.prepareStatement(
-					"INSERT INTO buy_detail(buy_id,item_id) VALUES(?,?)");
+					"INSERT INTO buy_detail(buy_id,book_id) VALUES(?,?)");
 			st.setInt(1, bdd.getBuyId());
 			st.setInt(2, bdd.getBookId());
 			st.executeUpdate();

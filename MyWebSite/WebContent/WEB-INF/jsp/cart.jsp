@@ -26,7 +26,49 @@
 
 		<h2 class="text-center">カート</h2>
 
-		<br><br>
+		<br>
+
+		<c:if test="${cartMsg != null}">
+			<div class="alert alert-primary text-center" role="alert">${cartMsg}</div>
+
+		</c:if>
+
+		<br>
+
+
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered"
+				class="table table-bordered">
+				<thead>
+					<tr>
+						<th>著者</th>
+						<th>書籍名</th>
+						<th>価格</th>
+						<th></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<c:forEach var="books" items="${bookList}">
+					<tr>
+						<td></td>
+						<td></td>
+						<td>円 </td>
+
+						<td>
+						<a ></a>
+
+						 </td>
+
+					</tr>
+
+					</c:forEach>
+
+
+				</tbody>
+
+			</table>
+		</div>
 
 
 		<div class="button_center">

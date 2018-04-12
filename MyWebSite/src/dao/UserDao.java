@@ -18,19 +18,20 @@ public class UserDao {
 
 	//ログインIDとパスワードに紐づくユーザ情報を返す
 
-    public User findByLoginInfo(String loginId, String password) {
+    public User findByLoginInfo(String loginId, String password, String userType) {
         Connection conn = null;
         try {
             // データベースへ接続
             conn = DBManager.getConnection();
 
             // SELECT文を準備
-            String sql = "SELECT * FROM user WHERE login_id = ? and password = ?";
+            String sql = "SELECT * FROM user WHERE login_id = ? and password = ? and user_type = ?";
 
              // SELECTを実行し、結果表を取得
             PreparedStatement pStmt = conn.prepareStatement(sql);
             pStmt.setString(1, loginId);
             pStmt.setString(2,Util.convertmd5(password));
+            pStmt.setString(3, userType);
             ResultSet rs = pStmt.executeQuery();
 
 

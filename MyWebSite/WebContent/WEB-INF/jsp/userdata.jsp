@@ -42,6 +42,7 @@
 						<td><fmt:formatDate value="${detailUser.birth_date}" pattern="yyyy年MM月dd日"/></td>
 						<td><a class="btn btn-primary" href="UserUpdate">情報更新</a>
 						<a class="btn btn-success" href="UserSendHistryDetail">相談履歴</a>
+						<a class="btn btn-danger" href="Cart">カート確認</a>
 
 					</tr>
 

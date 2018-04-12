@@ -28,6 +28,8 @@
 
 		<form action="MentorLogin" method="post">
 
+		<input type="hidden" name="userType" value="2">
+
 			<div class="button_right">
 				<a class="btn btn-success" href="MentorRegist">メンター新規登録</a><br>
 				<br>

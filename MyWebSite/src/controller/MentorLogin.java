@@ -38,10 +38,11 @@ public class MentorLogin extends HttpServlet {
 
 		String loginId = request.getParameter("loginId");
 		String password = request.getParameter("password");
+		String userType = request.getParameter("userType");
 
 
 		UserDao userDao = new UserDao();
-		User user = userDao.findByLoginInfo(loginId, password);
+		User user = userDao.findByLoginInfo(loginId, password, userType);
 
 
 		if (user == null) {

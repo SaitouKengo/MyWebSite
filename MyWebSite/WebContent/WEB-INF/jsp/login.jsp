@@ -30,6 +30,8 @@
 
 		<form  action="Login" method="post">
 
+		<input type="hidden" name="userType" value="1">
+
 		<div class="button_right">
 			<a class="btn btn-success" href="Regist">ユーザー新規登録</a><br> <br>
 		</div>

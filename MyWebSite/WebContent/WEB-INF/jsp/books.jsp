@@ -41,7 +41,7 @@
 
 						<td>
 						<a class="btn btn-primary" href="BookInfo?id=${books.id}">詳細</a>
-						 <a class="btn btn-success" href="#">購入</a>
+
 						 </td>
 
 					</tr>

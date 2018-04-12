@@ -19,7 +19,13 @@
 
 		<h2 class="text-center">書籍詳細</h2>
 
-		<br><br>
+		<br>
+
+
+
+		<br>
+
+		<form  action="BookInfo" method="post">
 
 
 		<div class="alert alert-success text-center" role="alert">
@@ -32,9 +38,11 @@
 			<p class="mb-0">
 				内容:<br><br> ${detailBooks.book_info}</p>
 				<br>
-				<a class="btn btn-success" href="#">カートに追加</a>
+				<button class="btn btn-success" type="submit">カートに追加</button>
 
 		</div>
+
+		</form>
 		<br>
 
 		<br>

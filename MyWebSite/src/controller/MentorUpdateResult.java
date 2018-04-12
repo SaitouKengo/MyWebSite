@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import beans.User;
 
 /**
  * Servlet implementation class MentorUpdate
@@ -28,6 +31,18 @@ public class MentorUpdateResult extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//ログインセッションがない場合、メンターログイン画面に遷移させる
+				HttpSession sessions = request.getSession();
+
+				User userse = (User) sessions.getAttribute("userInfo");
+
+				if (userse == null) {
+					response.sendRedirect("MentorLogin");
+
+					return;
+				}
+
 		// フォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mentorUpdateResult.jsp");
 				dispatcher.forward(request, response);

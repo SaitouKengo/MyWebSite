@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Books
+ * Servlet implementation class BooksAdd
  */
-@WebServlet("/Books")
+@WebServlet("/BooksAdd")
 public class BooksAdd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class BooksAdd extends HttpServlet {
 			//選択された商品のIDを型変換し利用
 			int id = Integer.parseInt(request.getParameter("book_id"));
 			//対象のアイテム情報を取得
-			Books book = Books.getBooksID(id);
+			Books book = Books.getInt(id);
 
 			//追加した商品を表示するためリクエストパラメーターにセット
 			request.setAttribute("book", book);

@@ -26,7 +26,9 @@
 		<h2 class="text-center text">お悩み相談サイト</h2>
 
 
-		<br> <br>各メンターの詳細画面から、お悩みを投稿してください。
+		<br> <br>
+		<div class="text-center">各メンターの詳細画面から、お悩みを投稿してください。</div>
+		<br>
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered"
 				class="table table-bordered">

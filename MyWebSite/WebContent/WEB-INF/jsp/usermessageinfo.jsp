@@ -20,7 +20,7 @@
 		<h2 class="text-center">相談詳細</h2>
 		<br><br>
 
-		<div class="alert alert-info" role="alert">
+		<div class="alert alert-info text-center" role="alert">
 			<h5 class="alert-heading">相談者: ${userInfo.name}</h5>
 			<hr>
 			<p>相談日時:<fmt:parseDate  var="questionDate" value="${detailQuestion.questionDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
@@ -34,7 +34,7 @@
 		</div>
 		<br><br>
 
-		<div class="alert alert-success" role="alert">
+		<div class="alert alert-success text-center" role="alert">
 			<h5 class="alert-heading">返信者: ${detailQuestion.subject}</h5>
 			<hr>
 			<p>返信日時: <fmt:parseDate  var="replyDate" value="${detailQuestion.replyDate}" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
@@ -46,6 +46,11 @@
 				返信内容:<br><br> ${detailQuestion.reply}
 			</p>
 		</div>
+
+		<ul class="nav justify-content-end">
+			<li class="nav-item"><a class="nav-link active"
+				href="UserData?id=${userInfo.id}">戻る</a></li>
+		</ul>
 
 	</div>
 </body>

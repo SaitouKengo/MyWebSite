@@ -15,7 +15,7 @@
 
 		<h2 class="text-center">メンタープロフィール更新</h2>
 
-		<form  action="MentorSub2" method="post">
+		<form  action="MentorUpdate" method="post">
 
 		<input type="hidden" name="id" value="${userInfo.id}">
 

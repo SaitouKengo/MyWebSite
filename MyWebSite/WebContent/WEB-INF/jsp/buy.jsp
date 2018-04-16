@@ -17,6 +17,10 @@
 	<div class="container">
 		<br>
 
+		<h2 class="text-center">書籍購入完了</h2>
+
+		<br>
+
 		<div class="alert alert-info" role="alert">
 			<h5 class="alert-heading   text-center">書籍の購入が完了しました。</h5>
 
@@ -43,8 +47,6 @@
 						<td>父ちゃんごめん</td>
 						<td>1200円 </td>
 						<td>1</td>
-
-
 
 					</tr>
 

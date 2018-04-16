@@ -23,7 +23,7 @@
 		</div>
 
 		<br><br>
-		<div class="table-responsive">
+		<div class="table-responsive text-center">
 			<table class="table table-striped table-bordered"
 				class="table table-bordered">
 				<thead>
@@ -56,6 +56,7 @@
 			</table>
 		</div>
 
+		<br>
 
 		<div class="button_center">
 			 <a class="btn btn-primary" href="UserList">TOP画面へ</a><br><br>

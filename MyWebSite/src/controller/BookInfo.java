@@ -70,7 +70,8 @@ public class BookInfo extends HttpServlet {
     				request.setAttribute("cartMsg", "カートに書籍を追加しました。");
 
     				// Cartにリダイレクト
-    				response.sendRedirect("Cart");
+    				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/cart.jsp");
+    	            dispatcher.forward(request,response);
     				return;
     			}
 

@@ -5,37 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>カート情報</title>
+<title>購入確認</title>
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 </head>
 
 <body background="picture/p0526_m.jpg">
-	<ul class="navbar justify-content bg-dark">
-	    <li class="nav"><a class="nav-link active"
-			href="UserList">TOP画面へ</a></li>
-		<li class="nav justify-content-end"><a class="nav-link active"
-			href="UserData?id=${userInfo.id}">${userInfo.name}さん</a></li>
-		<li class="nav justify-content-end"><a class="nav-link active"
-			href="MentorLogin">メンター用ページ</a></li>
-		<li class="nav justify-content-end"><a class="nav-link disabled"
-			href="Logout">ログアウト</a></li>
-	</ul>
+
+<jsp:include page="/baselayout/header.jsp" />
+
 	<div class="container">
 		<br>
 
-		<h2 class="text-center">カート</h2>
+		<div class="alert alert-info" role="alert">
+			<h5 class="alert-heading   text-center">書籍の購入が完了しました。</h5>
 
-		<br>
+		</div>
 
-		<c:if test="${cartMsg != null}">
-			<div class="alert alert-primary text-center" role="alert">${cartMsg}</div>
-
-		</c:if>
-
-		<br>
-
-
+		<br><br>
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered"
 				class="table table-bordered">
@@ -57,6 +44,8 @@
 						<td>1200円 </td>
 						<td>1</td>
 
+
+
 					</tr>
 
 
@@ -69,8 +58,7 @@
 
 
 		<div class="button_center">
-			 <a class="btn btn-primary" href="Buy">購入</a><br><br>
-			 <a class="btn btn-danger" href="Books">書籍一覧に戻る</a><br>
+			 <a class="btn btn-primary" href="UserList">TOP画面へ</a><br><br>
 		</div>
 
 </div>

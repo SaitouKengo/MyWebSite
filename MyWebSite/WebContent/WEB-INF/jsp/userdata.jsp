@@ -25,14 +25,14 @@
 		 <br><br>
 
 		<div class="table-responsive">
-			<table class="table table-striped table-bordered"
+			<table class="table table-striped table-bordered text-center"
 				class="table table-bordered">
 				<thead>
 					<tr>
 						<th>ユーザー名</th>
 						<th>ログインID</th>
 						<th>生年月日</th>
-						<th></th>
+
 					</tr>
 				</thead>
 				<tbody>
@@ -40,9 +40,6 @@
 						<td>${detailUser.name}</td>
 						<td>${detailUser.loginId}</td>
 						<td><fmt:formatDate value="${detailUser.birth_date}" pattern="yyyy年MM月dd日"/></td>
-						<td><a class="btn btn-primary" href="UserUpdate">情報更新</a>
-						<a class="btn btn-success" href="UserSendHistryDetail">相談履歴</a>
-						<a class="btn btn-danger" href="Cart">カート確認</a>
 
 					</tr>
 
@@ -51,7 +48,30 @@
 			</table>
 		</div>
 
-		<br>
+
+
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered text-center"
+				class="table table-bordered">
+				<thead>
+
+				</thead>
+				<tbody>
+					<tr>
+						<td><a class="btn btn-primary" href="UserUpdate">情報更新</a></td>
+						<td><a class="btn btn-success" href="UserSendHistryDetail">相談履歴</a></td>
+						<td><a class="btn btn-danger" href="Cart">カート確認</a></td>
+						<td><a class="btn btn-info" href="BuyBookHistry">購入履歴</a></td>
+
+
+
+
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
 
 	</div>
 </body>

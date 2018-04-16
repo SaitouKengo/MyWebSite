@@ -49,7 +49,7 @@ public class BuyDetailDao {
 				BuyDetailData bdd = new BuyDetailData();
 				bdd.setId(rs.getInt("id"));
 				bdd.setBuyId(rs.getInt("buy_id"));
-				bdd.setBookId(rs.getInt("item_id"));
+				bdd.setBookId(rs.getInt("book_id"));
 				buyDetailList.add(bdd);
 			}
 

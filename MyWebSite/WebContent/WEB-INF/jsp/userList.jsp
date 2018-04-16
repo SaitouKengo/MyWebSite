@@ -30,11 +30,11 @@
 		<div class="text-center">各メンターの詳細画面から、お悩みを投稿してください。</div>
 		<br>
 		<div class="table-responsive">
-			<table class="table table-striped table-bordered"
+			<table class="table table-striped table-bordered text-center"
 				class="table table-bordered">
 				<thead>
 					<tr>
-						<th>メンターID</th>
+						<th></th>
 						<th>メンター名</th>
 						<th>生年月日</th>
 						<th></th>
@@ -45,11 +45,11 @@
 						<tr>
 
 
-							<td>${user.loginId}</td>
+							<td><img src="${user.picture}"width="50" height="60" ></td>
 							<td>${user.name}</td>
 							<td><fmt:formatDate value="${user.birth_date}"
 									pattern="yyyy年MM月dd日" /></td>
-							<td><a class="btn btn-primary" href="Mentor?id=${user.id}">詳細表示</a></td>
+							<td><a class="btn btn-primary" href="Mentor?id=${user.id}">詳細</a></td>
 
 						</tr>
 					</c:forEach>

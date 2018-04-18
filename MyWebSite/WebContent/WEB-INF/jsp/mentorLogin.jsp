@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -31,7 +30,8 @@
 		<input type="hidden" name="userType" value="2">
 
 			<div class="button_right">
-				<a class="btn btn-success" href="MentorRegist">メンター新規登録</a><br>
+				<a class="btn btn-success" href="MentorRegist">メンター新規登録</a>
+				<br>
 				<br>
 			</div>
 

@@ -75,7 +75,7 @@
 
 			  <div class="form-group">
 			    <label for="exampleFormControlTextarea1">相談内容</label>
-			    <textarea name="question" class="form-control" id="exampleFormControlTextarea1" ></textarea>
+			    <textarea name="question" class="form-control" id="exampleFormControlTextarea1"></textarea>
 			  </div>
 			  <br>
 

@@ -36,14 +36,14 @@
 			</div>
 
 			<div class="form-group">
-				<label for="formGroupExampleInput">ログインID</label> <input type="text"
-					name=loginId class="form-control" id="formGroupExampleInput"
-					placeholder="">
+				<label for="formGroupExampleInput"></label> <input type="text"
+					name=loginId class="form-control text-center" id="formGroupExampleInput"
+					placeholder="ログインID">
 			</div>
 			<div class="form-group">
-				<label for="formGroupExampleInput2">パスワード</label> <input
-					name=password type="password" class="form-control"
-					id="formGroupExampleInput2" placeholder="">
+				<label for="formGroupExampleInput2"></label> <input
+					name=password type="password" class="form-control text-center"
+					id="formGroupExampleInput2" placeholder="パスワード">
 			</div>
 
 

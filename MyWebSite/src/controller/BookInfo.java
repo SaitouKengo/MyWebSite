@@ -69,7 +69,7 @@ public class BookInfo extends HttpServlet {
     				// リクエストスコープにメッセージをセット
     				request.setAttribute("cartMsg", "カートに書籍を追加しました。");
 
-    				// Cartにリダイレクト
+    				// Cartにフォワード
     				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/cart.jsp");
     	            dispatcher.forward(request,response);
     				return;
